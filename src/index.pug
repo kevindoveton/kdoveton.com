@@ -1,0 +1,247 @@
+doctype html
+html
+	head
+		title= title
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1")
+
+		//- scripts
+		script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+		script(type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js")
+		script(type="text/javascript" src="js/dist.js")
+
+		//- css
+		link(rel="stylesheet", href="css/register.css")
+	body
+		form
+			//- Progress Bar
+			ul#progressBar
+				li.active Photo Consent
+				li Medical Consent
+				li Child Details
+				li Medical <br />
+				li Parent / Carer
+				li Payment
+
+			fieldset
+				ul
+					li
+						h1 PHOTO CONSENT
+						p.
+							The Christian Family Centre is requesting permission to take photographs or record video footage of your child for express use on publications, multi-media presentations or websites belonging to CFC. No personally identifiable information regarding your child will be published or provided to other organisations or individuals, except where this information is required by law, reporting suspected abuse or neglect, or in the case of an emergency. Personally identifiable information includes: participant names, photo or image, residential address, email address or phone numbers.
+
+				input(type="hidden", name="photoConsent")#photoConsent
+
+				button.next.disagree(onClick="setPhotoConsent(false)") I Do Not Agree
+				button.next(onClick="setPhotoConsent(true)") I Agree
+
+			fieldset
+				ul
+					li
+						h1 Medical Consent
+						h2 BY SIGNING THIS FORM YOU UNDERSTAND / AGREE THAT:
+
+						p.
+							• Team Leaders for this CFC program have your consent to take whatever action necessary to ensure the safety and well being of the group or individual participants under their care (includes your child or your nominated emergency contact person).<br />
+							• If your child becomes ill or is injured and you cannot be contacted, Team Leaders may obtain on your behalf whatever medical treatment is deemed necessary. You also agree to pay for such medical expenses.<br />
+							• If you fail or neglect to provide sufficient and current information in writing to enable the proper treatment of your child, no liability will be accepted for any injury or illness, which your child may suffer as a result.<br />
+							• An ambulance may be called in the case of an emergency.
+					li
+						h1 Christian content
+						p.
+							By signing this form I understand that Christian content is included as part of this event.
+
+				button.previous Previous
+				button.next I Agree
+			//- Child
+			fieldset
+				h1 Breakout Carnival
+				h2 Child Details
+				//- label Name
+				ul
+					li
+						input(type="text", minlength="2", name="fName")#fName
+						label First Name
+					li
+						input(type="text", name="lName")#lName
+						label Surname
+					li
+						input(type="text", name="address")#address
+						label Postal Address
+					li
+						input(type="date", name="dob")#birthDate
+						label Date of Birth
+					li
+						input(type="text", name="yearLevel")#yearLevel
+						label School Year Level
+
+				button.previous Previous
+				button.next Next
+
+			//- Medical
+			fieldset
+				h1 Medical
+				ul.radio
+					p#sufferAnyFollowingText Does your child or young person suffer from any of the following that Team Leaders should know about to assist in their care? (Asthma, Severe Allergies, Dietary Needs, Convulsive Seizures, Physical Needs)
+					li
+						input(type="radio", name="conditions", id="conditionsYes", value="yes")
+						label(for="conditionsYes") Yes
+					li
+						input(type="radio", name="conditions", id="conditionsNo", value="no" checked)
+						label(for="conditionsNo") No
+				ul
+					li
+						div#conditionsTextDiv.displayNone
+							input(type="text", name="conditionsText")
+							label More Information
+				ul.radio
+					p#immunisationsText Is your child / young person fully up to date with their immunisations for their age?
+					li
+						input(type="radio", name="immunisations", id="immunisationsYes", value="yes" checked)
+						label(for="immunisationsYes") Yes
+					li
+						input(type="radio", name="immunisations", id="immunisationsNo", value="no")
+						label(for="immunisationsNo") No
+
+					p#noImmunisationsText.displayNone.smallFont
+						i If no, by submitting this form you understand that you or the alternative contact person you nominate will be required to promptly withdraw your child from our program should we become aware of any ‘communicable disease’ to which they may have unknowingly been exposed.
+
+					p#anyOtherInfoText Is there any other information – or health plan - which might assist us to care for your child? Please give details:
+
+					li
+						input(type="radio", name="otherInformation", id="otherInformationYes", value="yes")
+						label(for="otherInformationYes") Yes
+					li
+						input(type="radio", name="otherInformation", id="otherInformationNo", value="no" checked)
+						label(for="otherInformationNo") No
+				ul
+					li
+						div#otherInfoDiv.displayNone
+							input(type="text", name="otherInformationText")
+							label More Information
+				button.previous Previous
+				button.next Next
+
+			//- Parent / Carer
+			fieldset
+				h1 Parent / Carer
+				ul
+					p#nominatedText Nominated adult to pick up child from Breakout Carnival
+					li
+						input(type="text", name="nominatedAdult")
+						label Nominated Adult
+
+					//- Main Contact
+					li
+						h2 Emergency Contact
+					li
+						input(type="text", name="emergContactName")
+						label Name
+					li
+						input(type="text", name="emergContactNumber")
+						label Contact Number
+					li
+						input(type="text", name="emergContactEmail")
+						label Email Address
+
+					//- Alternate
+					li
+						h2 Alternative Emergency Contact
+					li
+						input(type="text", name="altEmergContactName")
+						label Name
+					li
+						input(type="text", name="altEmergContactNumber")
+						label Contact Number
+
+				button.previous Previous
+				button.next Next
+
+			//- Payment
+			fieldset
+				h1 Payment
+				h2 How would you like to pay?
+
+				div.paymentButtons
+					button(onclick="paymentMethod('cash', this); return false;") Cash
+					button(onclick="paymentMethod('credit', this); return false;") Credit
+					input(type="hidden", name="payMethod")#payMethod
+				div#cash.displayNone
+					p Please bring $7 to Breakout Carnival.
+					ul
+						li
+							button(onclick="paymentMethod('credit', this); return false;").blue Prefer Credit?
+					button.previous Previous
+					button.next(onclick="submitForm()") Submit
+
+				div#credit.displayNone
+					ul
+						li
+							input(type="text", placeholder="Name On Card", name="cardName")
+							label Name On Card
+						li
+							input(type="text", placeholder="Card Number", name="cardNumber")
+							label Card Number
+						li
+							input(type="text", placeholder="Expiry", name="cardExpiry")
+							label Expiry Date
+						li
+							input(type="text", placeholder="CVC", name="cardCVC")
+							label CVC
+						li
+							button(onclick="paymentMethod('cash', this); return false;").blue Prefer Cash?
+					button.previous Previous
+					button.next(onclick="submitForm()") Submit
+
+			//- Feedback
+			fieldset
+				div.feedbackContainer
+					div#loaders
+						h2 Won't be a moment...
+						div.loader Loading...
+
+					div#formResubmission.displayNone
+						p An error has occurred. Please retry, if this occurs again please contact web@familycentre.org.au with the following
+						p#errorMessage
+
+					div.feedback.hidden#feedback
+						div.feedbackContent
+							h2 Your feedback is important
+							ul
+								p How did you hear about Breakout Carnival?
+								li
+									input(type="text", name="howDidYouHear")
+									label How did you hear about Breakout
+
+
+							ul.radio
+								p Do you attend a church?
+
+								li
+									input(type="radio", name="churchAttend", id="churchAttendYes", value="yes")
+									label(for="churchAttendYes") Yes
+
+								li
+									input(type="radio", name="churchAttend", id="churchAttendNo", value="no" checked)
+									label(for="churchAttendNo") No
+
+							div#churchAttendInfo.displayNone
+								ul
+									li
+										input(type="text", name="church")
+										label Which one?
+
+							ul.checkbox
+								p Which Future CFC events would you like to hear about?
+								li
+									input(type="checkbox", id="eventsKids")
+									label(for="eventsKids") CFC Kids
+									input(type="checkbox", id="eventsYouth")
+									label(for="eventsYouth") CFC Youth
+									input(type="checkbox", id="eventsServices")
+									label(for="eventsServices") CFC Sunday Services
+									input(type="checkbox", id="eventsChristmas")
+									label(for="eventsChristmas") CFC Christmas and Easter Events
+									//- option CFC Kids
+								li
+									button.next(onclick="submitFeedback()") Submit

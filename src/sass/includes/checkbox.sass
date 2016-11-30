@@ -1,0 +1,84 @@
+@import "./variables"
+
+ul.checkbox
+	li
+		display: block
+		max-width: 100%
+		margin: 0 auto
+	input[type="checkbox"]
+		// display: inline
+		position: absolute
+		// margin: auto
+		top: 0
+		left: 0
+		// width: 2em
+		// height: 100%
+		display: none
+		&:checked + label::before
+			background-color: $blue
+
+	// div.check
+	label::before
+		color: $blue
+		vertical-align: -50%
+		display: inline-block
+		content: ''
+		margin-left: 1em
+		margin-right: 1em
+		position: relative
+		border: 3px solid
+		border-radius: 100%
+		width: 2em
+		height: 2em
+		transition: all 0.2s ease-in-out
+
+	input[type="checkbox"] + label
+		position: relative
+		display: inline-block
+		vertical-align: middle
+		font-size: 1em
+		color: black
+		background-color: transparent
+
+
+ul.radio
+	li
+		display: block
+		max-width: 10em
+		margin: 0 auto
+		// height: 3em
+
+		input[type="radio"]
+			// display: inline
+			position: absolute
+			// margin: auto
+			top: 0
+			left: 0
+			// width: 2em
+			// height: 100%
+			display: none
+			&:checked + label::before
+				background-color: $blue
+
+		// div.check
+		label::before
+			color: $blue
+			vertical-align: -50%
+			display: inline-block
+			content: ''
+			margin-left: 1em
+			margin-right: 1em
+			position: relative
+			border: 3px solid
+			border-radius: 100%
+			width: 2em
+			height: 2em
+			transition: all 0.25s ease-in-out
+
+		input[type="radio"] + label
+			position: relative
+			display: inline-block
+			vertical-align: middle
+			font-size: 1em
+			color: black
+			background-color: transparent

@@ -1,0 +1,149 @@
+@import "includes/fonts"
+@import "includes/base"
+@import "includes/variables"
+@import "includes/loader"
+@import "includes/checkbox"
+
+html
+	height: 100%
+	background: $blue
+
+p
+	line-height: 2em
+
+body
+	padding-bottom: 500px
+
+form
+	// min-width: 50%
+	margin: 50px auto
+	text-align: center
+	position: relative
+	min-width: 375px
+	max-width: 90%
+
+	// Progress Bar
+	@import "includes/progressbar"
+
+	// titles
+	h1
+		text-transform: uppercase
+	h2
+		padding: 0.5em
+		color: #999
+		font-size: 1em
+
+	fieldset
+		background: white
+		border: 0 none
+		border-radius: 3px
+		box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)
+		padding: 2rem 1rem
+		box-sizing: border-box
+		width: $fieldsetWidth
+		margin: 0 (100-$fieldsetWidth)/2
+		position: absolute
+
+	fieldset:not(:first-of-type)
+		display: none
+
+	input, textarea
+		width: 100%
+		height: 100%
+		padding: 2.25em 1em 1em
+		border: 1px solid #ccc
+		border-radius: 3px
+		margin-bottom: 10px
+		// box-sizing: border-box
+		color: #2C3E50
+		font-size: 13px
+
+	input[type="date"]
+		-webkit-appearance: none
+		// position: absolute
+
+	ul
+		list-style: none
+
+	li
+		position: relative
+
+	label
+		border-top-left-radius: 3px
+		border-top-right-radius: 3px
+		position: absolute
+		text-align: left
+		top: 0em
+		left: 0em
+		color: white
+		background-color: $orange
+		width: 100%
+		padding-left: 1em
+		padding-top: .2em
+		padding-bottom: .2em
+		display: block
+		// line-height: 4em
+		// margin-right: 100%
+		opacity: 1
+		font-size: 0.8125em
+		transition: 0.2s
+
+	button
+		background: $orange
+		font-weight: 150
+		font-size: 1rem
+		color: white
+		border: 0 none
+		border-radius: 0.3rem
+		cursor: pointer
+		padding: 0.5em 2em
+		margin: 10px 1em
+		transition: all 0.15s ease-in-out
+
+	button:hover, button:focus
+		box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60
+
+
+
+.leftAlign
+	text-align: left
+
+.disagree
+	background-color: red
+
+.hidden
+	opacity: 0
+
+.displayNone
+	display: none
+
+.feedback
+	position: absolute
+	top: 0
+	left: 0
+	transition: opacity .5s ease-in-out
+	width: 100%
+
+.feedbackContent
+	position: relative
+	width: 90%
+	margin: auto
+
+.feedbackContainer
+	transition: all .3s ease-in-out
+
+#loaders
+	transition: opacity .5s ease-in-out
+
+#credit
+	position: relative
+
+#cash
+	position: relative
+
+.smallFont
+	font-size: .875em
+	line-height: 1.5em
+
+.blue
+	background-color: $blue
