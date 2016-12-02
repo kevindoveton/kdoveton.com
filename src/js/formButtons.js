@@ -13,9 +13,8 @@ $(function() {
 
 function submitForm() {
 	// $("#loaders").removeClass("hidden").animate({opacity: 1});
-	const d = $("form").serialize();
+	var d = $("form").serialize();
 	$.post("/ajax/breakoutcarnival/", d, function(data) {
-		console.log(data);
 		if (data === "success")
 		{
 			// Make Feedback Right Size
@@ -41,7 +40,20 @@ function submitForm() {
 }
 
 function submitFeedback(d) {
-	console.log("feedback submitted");
+	var d = $("form").serialize();
+	$.post("/ajax/breakoutcarnivalfeedback/", d, function(data) {
+		console.log(data);
+		if (data === "success")
+		{
+			window.location.href="./success.html"
+		}
+		else {
+			console.log("error : " + data);
+		}
+	})
+	.fail(function(xhr, status, error) {
+		console.log('failed to submit: ' + error);
+	});
 }
 
 function paymentMethod(d) {
