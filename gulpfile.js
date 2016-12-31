@@ -38,7 +38,7 @@ gulp.task('pug', function () {
 
 gulp.task('js', function() {
 	pump([
-		gulp.src('./src/js/*.js'),
+		gulp.src('./src/js/user/*.js'),
 		concat('dist.js'),
 		uglify(),
 		gulp.dest(paths.js)
@@ -92,7 +92,7 @@ gulp.task('sass', function () {
 gulp.task('watch', function () {
   gulp.watch(paths.sass + '**/*.sass', ['sass']);
   gulp.watch('./src/**/*.pug', ['rebuild']);
-  gulp.watch('./src/js/*.js', ['js', 'rebuild']);
+  gulp.watch('./src/js/**/*.js', ['js', 'rebuild']);
 });
 
 // Build task compile sass and pug.
