@@ -11,10 +11,18 @@ body
 	min-height: 100vh
 	min-width: 100%
 
+.bgcolor
+	background: transparentize($bg2, 0.3)
+	width: 100%
+	height: 100vh
+	z-index: -1
+
+
 .home
 	display: flex
 	align-items: flex-start
 	background: url('/img/home.jpg') center center no-repeat
+	background-size: cover
 
 	.title
 		position: absolute
@@ -22,18 +30,27 @@ body
 		border-bottom: 1px solid $white
 		color: $title
 		text-align: right
-		top: 134px
-		right: 134px
+		top: 2em
+		right: 2em
+		@media(max-width: $mobileWidth)
+			font-size: 12px
+			width: auto
+
+
 		h1
 			text-transform: uppercase
 			text-transform: full-width
 			display: block
-			margin: auto
+			// margin: auto
 			font-family: 'Helvetica Neue'
 			font-weight: 600
 			font-size: 4em
 			letter-spacing: 1px
-			// padding: 1em
+
+			span.break
+				@media(max-width: $mobileWidth)
+					display: block
+
 		h2
 			margin-top: -10px
 			margin-bottom: 8px
@@ -48,9 +65,10 @@ body
 	position: fixed
 	top: 0
 	left: 0
-	z-index: -1
+	z-index: -2
 	display: block
-	background: url('/img/home.jpg') center no-repeat
+	background: url('/img/home.jpg') center center no-repeat
+	background-size: cover
 	filter: blur(10px)
 	height: 100vh
 	width: 100%
@@ -59,10 +77,10 @@ body
 	// position: fixed
 	left: 0
 	right: 0
-	z-index: 0
+	// z-index: 1
 	.title
 		font-family: 'Helvetica Neue'
-		position: relative
+		position: absolute
 		top: 50px
 		left: 50px
 		min-width: 207px

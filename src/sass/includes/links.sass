@@ -1,12 +1,19 @@
 .links
 	position: absolute
-	bottom: 50px
+	bottom: 0em
+	padding-top: 1em
+	padding-bottom: 1em
 	width: 100%
 	text-align: center
 	color: $white
 	font-weight: normal
 	font-family: 'Helvetica Neue'
 	letter-spacing: 2px
+	background-color: transparentize(black, 0.2)
+
+	@media(max-width: $mobileWidth)
+		font-size: 10px
+		letter-spacing: 1px
 
 	a, a:visited, a:link, a:not(:visited)
 		color: inherit
@@ -15,9 +22,13 @@
 		width: 100%
 		li
 			display: inline-block
+
+			@media(max-width: $mobileWidth)
+				margin-right: 1em
+				margin-left: 1em
+
 			margin-right: 5%
 			margin-left: 5%
-			// height: 50px
 			text-transform: uppercase
 
 		li.active
