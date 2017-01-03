@@ -105,6 +105,7 @@ gulp.task('sass', function () {
 gulp.task('watch', function () {
   gulp.watch(paths.sass + '**/*.sass', ['sass']);
   gulp.watch('./src/**/*.pug', ['rebuild']);
+  gulp.watch('./src/includes/**/*.md', ['rebuild']);
   gulp.watch('./src/js/**/*.js', ['js', 'rebuild']);
 });
 
