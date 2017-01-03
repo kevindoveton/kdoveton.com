@@ -1,26 +1,32 @@
 div.contentWork
 	position: absolute
-	top: 0
+	top: 5em
 	left: 0
-	margin-bottom: 5em
+	padding-bottom: 3em
+
 	ul
 		li
+			overflow: hidden
 			list-style: none
-			width: 80%
+			width: 100%
 			margin-left: auto
 			margin-right: auto
 			color: $white
-			padding: 10%
+			// min-height: 15em
+			padding-left: 2em
+			padding-right: 2em
+			padding-bottom: 5em
+			padding-top: 5em
 
 			img
 				position: relative
 				width: 30%
-				min-height: 50px
+				// min-height: 50px
 
 
 			div.workTitle
 				border-bottom: 1px solid $white
-				height: 20%
+				// height: 20%
 				position: relative
 				display: inline-block
 				width: 70%
@@ -35,6 +41,7 @@ div.contentWork
 			p
 				text-align: left
 				width: 70%
+				padding-bottom: 1em
 
 		li:nth-child(2n+0)
 			img

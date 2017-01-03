@@ -12,6 +12,9 @@ var gulp = require('gulp'),
   concat = require('gulp-concat'),
   browserSync = require('browser-sync');
 
+// var transformer = require('jstransformer');
+// var markdown = transformer(require('jstransformer-markdown-it'));
+
 /*
  * Directories here
  */
@@ -28,21 +31,31 @@ var paths = {
  * matching file name. index.pug - index.pug.json
  */
 gulp.task('pug', function () {
-  return gulp.src('./src/*.pug')
-    // .pipe(data(function (file) {
-    //   return require(paths.data + path.basename(file.path) + '.json');
-    // }))
-    .pipe(pug())
-    .pipe(gulp.dest(paths.public));
+	pump([
+		gulp.src('./src/*.pug'),
+		pug(),
+		gulp.dest(paths.public)
+	]);
+	return;
 });
 
 gulp.task('js', function() {
+	// User
 	pump([
 		gulp.src('./src/js/user/*.js'),
 		concat('dist.js'),
 		uglify(),
 		gulp.dest(paths.js)
 	]);
+
+	// Vendor
+	pump([
+		gulp.src('./src/js/vendor/*.js'),
+		concat('vendor.js'),
+		uglify(),
+		gulp.dest(paths.js)
+	]);
+
 	return;
 });
 

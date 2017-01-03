@@ -5,11 +5,14 @@
 *
 	margin: 0
 	padding: 0
+	font-family: 'Helvetica Neue'
 
 body
-	// background-color: $bg1
 	min-height: 100vh
 	min-width: 100%
+
+.clear
+	clear:both
 
 .bgcolor
 	position: fixed
@@ -76,14 +79,14 @@ body
 
 .page
 	// position: fixed
-	left: 0
-	right: 0
+	// left: 0
+	// right: 0
 	// z-index: 1
 	.title
 		font-family: 'Helvetica Neue'
 		position: absolute
-		top: 50px
-		left: 50px
+		top: 2em
+		left: 2em
 		min-width: 207px
 		width: 600px
 		max-width: 50%
@@ -94,14 +97,17 @@ body
 			text-transform: uppercase
 
 	.contentbox
+		color: white
+		font-family: 'Helvetica Neue'
 		position: absolute
-		top: 0
-		margin-top: 6em
+		top: 5em
 		width: 80%
 		margin-left: auto
 		margin-right: auto
+		padding-left: 2em
+		padding-right: 2em
 		p
-			padding: 1em
+			padding-bottom: 1em
 
 	@import "includes/work"
 
