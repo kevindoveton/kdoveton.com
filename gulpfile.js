@@ -83,19 +83,21 @@ gulp.task('browser-sync', ['sass', 'pug', 'js'], function () {
  * need for vendor prefixes then live reload the browser.
  */
 gulp.task('sass', function () {
-  return gulp.src(paths.sass + '*.sass')
-    .pipe(sass({
-      includePaths: [paths.sass],
-      outputStyle: 'compressed'
-    }))
-    .on('error', sass.logError)
-    .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
-      cascade: true
-    }))
-    .pipe(gulp.dest(paths.css))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
+	pump([
+		gulp.src(paths.sass + '*.sass'),
+		sass({
+			includePaths: [paths.sass],
+			outputStyle: 'compressed'
+		}),
+		prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
+			cascade: true
+		}),
+		gulp.dest(paths.css),
+		browserSync.reload({
+	      stream: true
+	    })
+	]);
+	return;
 });
 
 /**

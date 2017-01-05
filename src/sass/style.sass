@@ -22,47 +22,9 @@ body
 	z-index: -1
 
 
-.home
-	display: flex
-	align-items: flex-start
-	background: url('/img/home.jpg') center center no-repeat
-	background-size: cover
-
-	.title
-		position: absolute
-		font-size: 16px
-		border-bottom: 1px solid $white
-		color: $title
-		text-align: right
-		top: 2em
-		right: 2em
-		@media(max-width: $mobileWidth)
-			font-size: 12px
-			width: auto
-
-
-		h1
-			text-transform: uppercase
-			text-transform: full-width
-			display: block
-			// margin: auto
-			font-family: 'Helvetica Neue'
-			font-weight: 600
-			font-size: 4em
-			letter-spacing: 1px
-
-			span.break
-				@media(max-width: $mobileWidth)
-					display: block
-
-		h2
-			margin-top: -10px
-			margin-bottom: 8px
-			letter-spacing: 5px
-			display: block
-			text-transform: lowercase
-			font-family: 'Helvetica Neue'
-			font-weight: 100
+@import "includes/home"
+@import "includes/about"
+@import "includes/contact"
 
 .page::before
 	content: ""
@@ -109,6 +71,6 @@ body
 		p
 			padding-bottom: 1em
 
-	@import "includes/work"
+	@import "includes/workNew"
 
 @import "includes/links"
