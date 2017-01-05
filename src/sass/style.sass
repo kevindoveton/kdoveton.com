@@ -1,6 +1,13 @@
+// Everything
 @import "includes/fonts"
 @import "includes/base"
 @import "includes/variables"
+
+// Page Specific
+@import "includes/home"
+@import "includes/about"
+@import "includes/contact"
+@import "includes/work"
 
 *
 	margin: 0
@@ -21,11 +28,6 @@ body
 	height: 100vh
 	z-index: -1
 
-
-@import "includes/home"
-@import "includes/about"
-@import "includes/contact"
-
 .page::before
 	content: ""
 	position: fixed
@@ -40,10 +42,6 @@ body
 	width: 100%
 
 .page
-	// position: fixed
-	// left: 0
-	// right: 0
-	// z-index: 1
 	.title
 		font-family: 'Helvetica Neue'
 		position: absolute
@@ -71,6 +69,5 @@ body
 		p
 			padding-bottom: 1em
 
-	@import "includes/workNew"
 
 @import "includes/links"

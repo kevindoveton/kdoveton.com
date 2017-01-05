@@ -2,7 +2,7 @@ doctype html
 html
 	include includes/head
 
-	body
+	body#work
 		div.bgcolor
 		div.page
 			div.title
@@ -12,59 +12,45 @@ html
 			div.contentWork
 				ul
 					li
-						img(src="http://lorempixel.com/400/200/")
+						img(src="./img/img.png")
 						div.workTitle
 							h1 Christian Family Centre
 							h2 Website
-						p
-							include:markdown-it includes/work/cfc.md
-
 					li
-						img(src="http://lorempixel.com/400/200/")
+						img(src="./img/img.png")
 						div.workTitle
 							h1 Marks Landing
 							h2 Website
-						p
-							include:markdown-it includes/work/markslanding.md
 
 					li
-						img(src="http://lorempixel.com/400/200/")
+						img(src="./img/img.png")
 						div.workTitle
 							h1 Car PC
 							h2 C++, QT, Bluez, DBus
-						p
-							include:markdown-it includes/work/carpc.md
 
 					li
-						img(src="http://lorempixel.com/400/200/")
+						img(src="./img/img.png")
 						div.workTitle
 							h1 Digico Control
 							h2 Node, OSC, Websockets
-						p
-							include:markdown-it includes/work/digicocontrol.md
+
 
 					li
-						img(src="http://lorempixel.com/400/200/")
+						img(src="./img/img.png")
 						div.workTitle
 							h1 FLO Login
 							h2 JS, HTML
-						p
-							include:markdown-it includes/work/flologin.md
+
 
 					li
-						img(src="http://lorempixel.com/400/200/")
+						img(src="./img/img.png")
 						div.workTitle
 							h1 CFC Youth
 							h2 Website
-						p
-							include:markdown-it includes/work/cfcyouth.md
 
-					li
-						img(src="http://lorempixel.com/400/200/")
-						div.workTitle
-							h1 Disk Edits
-							h2 Internal Site Modification (PHP, JS)
-						p
-							include:markdown-it includes/work/diskedits.md
-
+					//- li
+					//- 	img(src="./img/img.png")
+					//- 	div.workTitle
+					//- 		h1 Disk Edits
+					//- 		h2 Internal Site Modification (PHP, JS)
 		include includes/links

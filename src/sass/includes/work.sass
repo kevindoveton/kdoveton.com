@@ -5,62 +5,73 @@ div.contentWork
 	padding-bottom: 3em
 
 	ul
+		margin-left: auto
+		margin-right: auto
+		width: 100%
+		height: 1000px
+		@media(min-width: 1024px)
+			width: 70%
+
+		li:hover
+			div.workTitle
+				opacity: 1
+
 		li
 			overflow: hidden
+			float: left
 			list-style: none
-			width: 100%
-			margin-left: auto
-			margin-right: auto
+			min-width: 300px
+			min-height: 400px
 			color: $white
-			// min-height: 15em
-			padding-left: 2em
-			padding-right: 2em
-			padding-bottom: 5em
-			padding-top: 5em
+			display: block
+			position: relative
+			margin: 1em
 
 			img
-				position: relative
-				width: 30%
-				// min-height: 50px
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				z-index: 0
 
+			div.workTitle::before
+				content: ""
+				width: 100%
+				position: absolute
+				height: 100%
+				background-color: transparentize(black, 0)
+				z-index: 0
 
 			div.workTitle
-				border-bottom: 1px solid $white
-				// height: 20%
-				position: relative
-				display: inline-block
-				width: 70%
-				padding: 0
+				transition: opacity .2s ease-in-out
+				opacity: 0
+				position: absolute
+				display: block
+				width: 100%
+				min-height: 2rem
+				bottom: 0em
 
 				h1
+					position: relative
+					top: 0
 					text-transform: uppercase
-					font-size: 2em
+					font-size: 1.1rem
+					margin-left: 1rem
+					margin-top: 1rem
 				h2
-					font-size: 1em
+					position: relative
+					font-size: 1rem
 					font-weight: lighter
-			p
-				text-align: left
-				width: 70%
-				padding-bottom: 1em
+					margin-left: 1rem
+					margin-bottom: 1rem
+			// p
+			// 	text-align: left
+			// 	width: 70%
+			// 	padding-bottom: 1em
 
-		li:nth-child(2n+0)
-			img
-				float: left
-				padding-right: 1em
-
-			div.workTitle
-				float: left
-				text-align: right
-			p
-				float: left
-
-		li:nth-child(2n+1)
-			img
-				padding-left: 1em
-				float: right
-
-			div.workTitle
-				float: right
-				text-align: left
-			p
-				float: right
+			// div.workTitle
+			// 	float: left
+			// 	text-align: right
+			// p
+			// 	float: left
