@@ -1,38 +1,42 @@
 div.contentWork
-	position: absolute
-	top: 5em
+	position: relative
+	top: 3em
 	left: 0
-	padding-bottom: 3em
+	right: 0
+	padding-bottom: 5em
 
 	ul
-		margin-left: auto
-		margin-right: auto
+		padding-left: 1em
+		padding-right: 1em
 		width: 100%
-		height: 1000px
-		@media(min-width: 1024px)
-			width: 70%
 
 		li:hover
 			div.workTitle
 				opacity: 1
 
 		li
+			font-size: 8px
 			overflow: hidden
 			float: left
 			list-style: none
-			min-width: 300px
-			min-height: 400px
 			color: $white
 			display: block
 			position: relative
 			margin: 1em
+			width: 100%
+			height: 30em
+
+			@media(min-width: 600px)
+				font-size: 12px
+				width: 25em
+				height: 34em
 
 			img
 				position: absolute
 				top: 0
-				left: 0
-				width: 100%
+				margin: auto
 				height: 100%
+				width: 100%
 				z-index: 0
 
 			div.workTitle::before
@@ -40,28 +44,30 @@ div.contentWork
 				width: 100%
 				position: absolute
 				height: 100%
-				background-color: transparentize(black, 0)
+				background-color: transparentize(black, 0.5)
 				z-index: 0
 
 			div.workTitle
 				transition: opacity .2s ease-in-out
-				opacity: 0
 				position: absolute
 				display: block
 				width: 100%
-				min-height: 2rem
 				bottom: 0em
+
+				@media (min-width: 600px)
+					top: 0
+					opacity: 0
 
 				h1
 					position: relative
 					top: 0
 					text-transform: uppercase
-					font-size: 1.1rem
+					font-size: 2em
 					margin-left: 1rem
 					margin-top: 1rem
 				h2
 					position: relative
-					font-size: 1rem
+					font-size: 1.5em
 					font-weight: lighter
 					margin-left: 1rem
 					margin-bottom: 1rem

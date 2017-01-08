@@ -8,8 +8,19 @@ html
 			div.title
 				h1 Contact
 			div.contentbox
-				p Kevin Doveton
-				p
-					a(href="mailto:kevindoveton@me.com?subject=Website") kevindoveton@me.com
+				form
+					ul
+						li
+							input(type="text", name="name")
+							label Name
+						li
+							input(type="text", name="email")
+							label Email
+						li
+							textarea
+							label Message
 
+						li
+							button Submit
+				//- include:markdown-it includes/contact/main.md
 		include includes/links

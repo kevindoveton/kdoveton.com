@@ -9,6 +9,9 @@
 @import "includes/contact"
 @import "includes/work"
 
+// Forms
+@import "includes/form"
+
 *
 	margin: 0
 	padding: 0
@@ -42,9 +45,16 @@ body
 	width: 100%
 
 .page
+	@media only(max-width: 600px)
+		width: 100%
+	width: 70%
+	max-width: 1024px
+	margin-left: auto
+	margin-right: auto
+
 	.title
 		font-family: 'Helvetica Neue'
-		position: absolute
+		position: relative
 		top: 2em
 		left: 2em
 		min-width: 207px
@@ -59,9 +69,9 @@ body
 	.contentbox
 		color: white
 		font-family: 'Helvetica Neue'
-		position: absolute
-		top: 5em
-		width: 80%
+		position: relative
+		top: 3em
+		// width: 588px
 		margin-left: auto
 		margin-right: auto
 		padding-left: 2em
