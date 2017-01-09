@@ -9,6 +9,12 @@ div.contentWork
 		padding-left: 1em
 		padding-right: 1em
 		width: 100%
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: row
+		flex-wrap: wrap
+		align-content: flex-end
 
 		li:hover
 			div.workTitle
@@ -17,7 +23,6 @@ div.contentWork
 		li
 			font-size: 8px
 			overflow: hidden
-			float: left
 			list-style: none
 			color: $white
 			display: block
@@ -25,6 +30,9 @@ div.contentWork
 			margin: 1em
 			width: 100%
 			height: 30em
+			display: flex
+			align-items: center
+			justify-content: center
 
 			@media(min-width: 600px)
 				font-size: 12px
@@ -32,11 +40,8 @@ div.contentWork
 				height: 34em
 
 			img
-				position: absolute
-				top: 0
-				margin: auto
-				height: 100%
-				width: 100%
+				max-height: 300%
+				max-width: 300%
 				z-index: 0
 
 			div.workTitle::before
@@ -55,8 +60,8 @@ div.contentWork
 				bottom: 0em
 
 				@media (min-width: 600px)
-					top: 0
 					opacity: 0
+					top: 0
 
 				h1
 					position: relative
