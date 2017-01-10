@@ -34,7 +34,7 @@ div.contentWork
 			align-items: center
 			justify-content: center
 
-			@media(min-width: 600px)
+			@media only screen and (min-width: 600px)
 				font-size: 12px
 				width: 25em
 				height: 34em
@@ -57,9 +57,12 @@ div.contentWork
 				position: absolute
 				display: block
 				width: 100%
+				// safari needs left, chrome does not
+				left: 0
 				bottom: 0em
+				opacity: 1
 
-				@media (min-width: 600px)
+				@media only screen and (min-width: 600px)
 					opacity: 0
 					top: 0
 
@@ -76,13 +79,3 @@ div.contentWork
 					font-weight: lighter
 					margin-left: 1rem
 					margin-bottom: 1rem
-			// p
-			// 	text-align: left
-			// 	width: 70%
-			// 	padding-bottom: 1em
-
-			// div.workTitle
-			// 	float: left
-			// 	text-align: right
-			// p
-			// 	float: left
