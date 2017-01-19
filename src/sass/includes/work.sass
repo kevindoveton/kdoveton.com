@@ -23,8 +23,6 @@ div.contentWork
 				opacity: 1
 
 		li
-
-
 			font-size: 8px
 			overflow: hidden
 			list-style: none
@@ -39,9 +37,12 @@ div.contentWork
 			justify-content: center
 
 			@media only screen and (min-width: 600px)
-				font-size: 12px
 				width: 25em
 				height: 34em
+				font-size: 10px
+
+			@media only screen and (min-width: 1024px)
+				font-size: 12px
 
 			img
 				max-height: 100%
@@ -83,6 +84,10 @@ div.contentWork
 					margin-left: 1rem
 					margin-bottom: 1rem
 
+
+
+
+
 div.workInfo::before
 	position: absolute
 	top: 0
@@ -95,14 +100,15 @@ div.workInfo::before
 	z-index: -1
 
 div.workInfo
-	display: none
+	opacity: 0
+	transition: .5s all
 	position: fixed
 	top: 0
 	left: 0
 	height: 100vh
 	width: 100%
 	// must be above the page
-	z-index: 1
+	z-index: -1
 
 	div.content
 		width: 70%
@@ -157,8 +163,7 @@ div.workInfo
 			width: 160px
 			padding-top: 4px
 			padding-left: 50px
-			// padding-bottom: 10px
-			// transform: rotate(45deg)
-
-			// background-color: red
 			z-index: 2
+
+		img
+			max-width: 100%
