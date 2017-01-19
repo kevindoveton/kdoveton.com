@@ -1,4 +1,4 @@
-function formSubmit {
+function formSubmit() {
 	var d = $("form").serialize();
 	$.post("/contact.php", d, function(data) {
 		if (data === "success") {
@@ -7,5 +7,5 @@ function formSubmit {
 		else {
 			console.log('failed to submit');
 		}
-	};
+	});
 }

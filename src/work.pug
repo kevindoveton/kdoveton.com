@@ -11,50 +11,83 @@ html
 
 			div.contentWork
 				ul
-					li
-						img(src="./img/cfc.jpg")
-						div.workTitle
-							h1 Christian Family Centre
-							h2 Website
-					li
-						img(src="./img/markslanding.jpg")
-						div.workTitle
-							h1 Marks Landing
-							h2 Website
+					a(onclick="openWorkModal(this)")
+						span.modalContent
+							include:markdown-it includes/work/cfc.md
+						li
+							img(src="./img/cfc.jpg")
+							div.workTitle
+								h1 Christian Family Centre
+								h2 Website
 
+					a(onclick="openWorkModal(this)")
+						span.modalContent
+							include:markdown-it includes/work/markslanding.md
+						li
+							img(src="./img/markslanding.jpg")
+							div.workTitle
+								h1 Marks Landing
+								h2 Website
+
+					a(onclick="openWorkModal(this)")
+						span.modalContent
+							include:markdown-it includes/work/carpc.md
 					li
 						img(src="./img/carpc.jpg")
 						div.workTitle
 							h1 Car PC
 							h2 Embedded System
 
-					li
-						img(src="./img/img.png")
-						div.workTitle
-							h1 Digico Control
-							h2 iOS / Android App
 
-					li
-						img(src="./img/img.png")
-						div.workTitle
-							h1 FLO Login
-							h2 Browser Extension
+					a(onclick="openWorkModal(this)")
+						span.modalContent
+							include:markdown-it includes/work/digicocontrol.md
+						li
+							img(src="./img/img.png")
+							div.workTitle
+								h1 Digico Control
+								h2 iOS / Android App
 
-					li
-						img(src="./img/cfcyth.jpg")
-						div.workTitle
-							h1 CFC Youth
-							h2 Website
+					a(onclick="openWorkModal(this)")
+						span.modalContent
+							include:markdown-it includes/work/flologin.md
+						li
+							img(src="./img/img.png")
+							div.workTitle
+								h1 FLO Login
+								h2 Browser Extension
 
-					li
-						img(src="./img/cfcapp.jpg")
-						div.workTitle
-							h1 CFC App
-							h2 iOS / Android Apps
+					a(onclick="openWorkModal(this)")
+						span.modalContent
+							include:markdown-it includes/work/cfcyouth.md
+						li
+							img(src="./img/cfcyth.jpg")
+							div.workTitle
+								h1 CFC Youth
+								h2 Website
+
+					a(onclick="openWorkModal(this)")
+						span.modalContent
+							include:markdown-it includes/work/cfcapp.md
+						li
+							img(src="./img/cfcapp.jpg")
+							div.workTitle
+								h1 CFC App
+								h2 iOS / Android Apps
 
 					//- li
 					//- 	img(src="./img/img.png")
 					//- 	div.workTitle
 					//- 		h1 Disk Edits
 					//- 		h2 Internal Site Modification (PHP, JS)
+
+		div.workInfo
+			div.content
+				div#modalContent
+				a(onclick="closeWorkModal()")
+					p.close Close
+					//- span &nbsp;
+
+					//- p hi
+
 		include includes/links

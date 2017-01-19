@@ -44,7 +44,7 @@ gulp.task('js', function() {
 	pump([
 		gulp.src('./src/js/user/*.js'),
 		concat('dist.js'),
-		uglify(),
+		// uglify(),
 		gulp.dest(paths.js)
 	]);
 
