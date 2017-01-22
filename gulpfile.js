@@ -20,7 +20,6 @@ var gulp = require('gulp'),
  */
 var paths = {
   public: './public/',
-  sass: './src/sass/',
   js: './public/js/',
   css: './public/css/',
   data: './src/_data/'
@@ -56,6 +55,28 @@ gulp.task('js', function() {
 		gulp.dest(paths.js)
 	]);
 
+	return;
+});
+
+/**
+ * Compile .scss files into public css directory With autoprefixer no
+ * need for vendor prefixes then live reload the browser.
+ */
+gulp.task('sass', function () {
+	pump([
+		gulp.src('./src/sass/*.sass'),
+		sass({
+			includePaths: [paths.sass],
+			outputStyle: 'compressed'
+		}),
+		prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
+			cascade: true
+		}),
+		gulp.dest(paths.css),
+		browserSync.reload({
+	      stream: true
+	    })
+	]);
 	return;
 });
 
