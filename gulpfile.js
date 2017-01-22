@@ -74,6 +74,7 @@ gulp.task('browser-sync', ['sass', 'pug', 'js'], function () {
     server: {
       baseDir: paths.public
     },
+	tunnel: true,
     notify: true
   });
 });

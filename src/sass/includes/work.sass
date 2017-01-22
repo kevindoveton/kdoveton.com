@@ -3,20 +3,27 @@ div.contentWork
 	top: 3em
 	left: 0
 	right: 0
+	// width: 100%
 	padding-bottom: 5em
 	span.modalContent
+		//- span has content for js
 		display: none
 
 	ul
 		padding-left: 1em
 		padding-right: 1em
 		width: 100%
-		display: flex
+		// max-width: 400px
+		// margin: auto
+		display: block
 		align-items: center
 		justify-content: center
 		flex-direction: row
 		flex-wrap: wrap
 		align-content: flex-end
+
+		@media only screen and (min-width: 600px)
+			display: flex
 
 		li:hover
 			div.workTitle
@@ -27,25 +34,27 @@ div.contentWork
 			overflow: hidden
 			list-style: none
 			color: $white
-			display: block
 			position: relative
-			margin: 1em
 			width: 100%
 			height: 30em
 			display: flex
 			align-items: center
 			justify-content: center
+			margin: 1em 0
+			background-color: #333
 
 			@media only screen and (min-width: 600px)
 				width: 25em
 				height: 34em
 				font-size: 10px
+				margin: 1em
 
 			@media only screen and (min-width: 1024px)
 				font-size: 12px
 
 			img
 				max-height: 100%
+				// max-width: 100%
 				z-index: 0
 
 			div.workTitle::before
@@ -95,7 +104,7 @@ div.workInfo::before
 	height: 100vh
 	width: 100%
 	content: ''
-	background-color: transparentize($bg2, 0.1)
+	background-color: transparentize($bg2, 0.05)
 	// below the main div
 	z-index: -1
 
@@ -111,20 +120,26 @@ div.workInfo
 	z-index: -1
 
 	div.content
-		width: 70%
+		width: 100%
 		max-width: 1024px
 		margin-left: auto
 		margin-right: auto
 		background-color: transparentize(#333, 0.6)
-		// padding: 3em 1.5em 0
 		padding: 3em 0 0
 		height: 100%
+
+		@media only screen and (min-width: 500px)
+			width: 70%
+
+		div#modalContent
+			height: 20%
+
 		p
 			font-size: 1.3em
 			color: white
 			line-height: 1.4em
 			margin-top: 0.5em
-			margin-bottom: 0.5em
+			margin-bottom: 1em
 			padding: 0 1.5em
 
 		p:last-of-type
@@ -134,12 +149,20 @@ div.workInfo
 			top: 3em
 			left: 0
 			width: 100%
-			// background-color: transparentize(#111, 0)
 			background-color: #111
 			color: white
 			text-align: center
 			line-height: 1.5em
-			// border-bottom: 1px solid white
+
+		div.close
+			position: absolute
+			width: 70%
+			max-width: 1024px
+			bottom: 0
+			height: 50px
+			
+			@media only screen and (max-width: 500px)
+				width: 100%
 
 		p.close::before
 			position: absolute
@@ -159,15 +182,22 @@ div.workInfo
 			border-left: 3px solid white
 			transform: rotate(45deg)
 
+		p.twist::before, p.twist::after
+				animation: twist .5s linear
+				animation-iteration-count: 2
+
 		p.close
 			position: absolute
-			bottom: 10px
-			right: 10%
+			right: 0
 			height: 30px
-			width: 160px
-			padding-top: 4px
-			padding-left: 50px
+			padding-left: 2em
 			z-index: 2
 
 		img
 			max-width: 100%
+
+@keyframes twist
+	0%
+		transform: rotate(45deg)
+	100%
+		transform: rotate(405deg)
