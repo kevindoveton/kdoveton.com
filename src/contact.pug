@@ -8,8 +8,8 @@ html
 			div.title
 				h1 Contact
 			div.contentbox
-				p Contact me at kevindoveton@me.com
-				//- form
+				//- p Contact me at kevindoveton@me.com
+				form
 					ul
 						li
 							input(type="text", name="name")
@@ -18,13 +18,13 @@ html
 							input(type="text", name="email")
 							label Email
 						li
-							textarea
+							textarea(name="message")
 							label Message
 						li
-							button(onclick="submitForm") Submit
+							button#submitForm Submit
 
 				//- div#spinner
-
-				//- h2 Thanks,
-				//- p I'll be in touch soon!
+				div#onFormSuccess
+					h2 Thanks,
+					p I'll be in touch soon!
 		include includes/links

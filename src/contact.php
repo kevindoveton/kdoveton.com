@@ -1,6 +1,6 @@
 <?php
 
-$to = "kevindoveton@me.com"
+$to = "kevindoveton@me.com";
 
 function reportError() {
 	echo "something went wrong, please try again.";
@@ -12,13 +12,13 @@ if ($_POST) {
 	$message = $_POST['message'];
 
 	$msg = 	"<h1>Contact Form:</h1>";
-	$msg +=	"<h1>Name</h1><p>";
-	$msg +=	$name;
-	$msg +=	"</p><h2>Email</h2><p>";
-	$msg +=	$email;
-	$msg +=	"</p><h2>Message</h2><p>";
-	$msg +=	$message;
-	$msg +=	"</p>";
+	$msg .=	"<h1>Name</h1><p>";
+	$msg .=	$name;
+	$msg .=	"</p><h2>Email</h2><p>";
+	$msg .=	$email;
+	$msg .=	"</p><h2>Message</h2><p>";
+	$msg .=	$message;
+	$msg .=	"</p>";
 
 	// Email Headers
 	$headers = "From: " . $email . "\r\n";
