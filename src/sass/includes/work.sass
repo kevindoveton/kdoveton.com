@@ -132,7 +132,18 @@ div.workInfo
 			width: 70%
 
 		div#modalContent
-			height: 20%
+			position: fixed
+			top: 0em
+			left: 0
+			right: 0
+			bottom: 3em
+			padding-top: 3em
+			overflow: scroll
+			@media only screen and (min-width: 500px)
+				width: 70%
+				max-width: 1024px
+				margin-left: auto
+				margin-right: auto
 
 		p
 			font-size: 1.3em
@@ -160,6 +171,7 @@ div.workInfo
 			max-width: 1024px
 			bottom: 0
 			height: 50px
+			// background-color: #
 
 			@media only screen and (max-width: 500px)
 				width: 100%

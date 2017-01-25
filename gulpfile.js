@@ -22,7 +22,8 @@ var paths = {
   public: './public/',
   js: './public/js/',
   css: './public/css/',
-  data: './src/_data/'
+  data: './src/_data/',
+  sass: './src/sass/'
 };
 
 /**
@@ -76,7 +77,9 @@ gulp.task('sass', function () {
 		browserSync.reload({
 	      stream: true
 	    })
-	]);
+	], function(e) {
+		console.log(e);
+	});
 	return;
 });
 
@@ -118,7 +121,9 @@ gulp.task('sass', function () {
 		browserSync.reload({
 	      stream: true
 	    })
-	]);
+	], function(e) {
+		console.log(e);
+	});
 	return;
 });
 
