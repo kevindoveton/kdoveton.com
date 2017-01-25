@@ -60,30 +60,6 @@ gulp.task('js', function() {
 });
 
 /**
- * Compile .scss files into public css directory With autoprefixer no
- * need for vendor prefixes then live reload the browser.
- */
-gulp.task('sass', function () {
-	pump([
-		gulp.src('./src/sass/*.sass'),
-		sass({
-			includePaths: [paths.sass],
-			outputStyle: 'compressed'
-		}),
-		prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
-			cascade: true
-		}),
-		gulp.dest(paths.css),
-		browserSync.reload({
-	      stream: true
-	    })
-	], function(e) {
-		console.log(e);
-	});
-	return;
-});
-
-/**
  * Recompile .pug files and live reload the browser
  */
 gulp.task('rebuild', ['pug'], function () {
@@ -98,7 +74,6 @@ gulp.task('browser-sync', ['sass', 'pug', 'js'], function () {
     server: {
       baseDir: paths.public
     },
-	tunnel: true,
     notify: true
   });
 });
@@ -122,7 +97,9 @@ gulp.task('sass', function () {
 	      stream: true
 	    })
 	], function(e) {
-		console.log(e);
+		if (e !== undefined) {
+			console.log(e);
+		}
 	});
 	return;
 });
