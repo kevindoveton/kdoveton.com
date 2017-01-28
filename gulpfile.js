@@ -1,6 +1,8 @@
 /*global require*/
 "use strict";
 
+var domainName = 'http://www.kdoveton.com';
+
 var gulp = require('gulp'),
   path = require('path'),
   data = require('gulp-data'),
@@ -10,7 +12,8 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   pump = require('pump'),
   concat = require('gulp-concat'),
-  browserSync = require('browser-sync');
+  browserSync = require('browser-sync'),
+  sitemap = require('gulp-sitemap');
 
 // var transformer = require('jstransformer');
 // var markdown = transformer(require('jstransformer-markdown-it'));
@@ -116,7 +119,7 @@ gulp.task('watch', function () {
 });
 
 // Build task compile sass and pug.
-gulp.task('build', ['sass', 'pug', 'js']);
+gulp.task('build', ['sass', 'pug', 'js', 'sitemap']);
 
 /**
  * Default task, running just `gulp` will compile the sass,
@@ -125,7 +128,17 @@ gulp.task('build', ['sass', 'pug', 'js']);
  */
 gulp.task('default', ['browser-sync', 'watch']);
 
-
+gulp.task('sitemap', function () {
+    gulp.src(paths.public + '/**/*.html', {
+            read: false
+        })
+        .pipe(sitemap({
+            siteUrl: domainName,
+			fileName: 'sitemap.xml',
+			changefreq: 'monthly'
+        }))
+        .pipe(gulp.dest(paths.public));
+});
 
 // FTP DEPLOY
 var ftp = require('vinyl-ftp');
