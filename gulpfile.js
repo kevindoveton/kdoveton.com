@@ -25,10 +25,10 @@ var paths = {
   public: './public/',
   js: './public/js/',
   css: './public/css/',
-  images: './public/img/'
+  images: './public/img/',
   data: './src/_data/',
   sass: './src/sass/',
-  assets: './assets/'
+  assets: './assets/',
   src: './src/'
 };
 
