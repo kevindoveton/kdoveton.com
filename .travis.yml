@@ -6,11 +6,12 @@ cache: yarn
 
 script:
     - gulp build
+    - gulp php
 
 env:
     global:
         - secure: vloBfo+bNrqB4oAxs7fmnY8kOHwigHbNUVplNGrTSbtamkBleZ/Sqpz8ddg5u2Zt1L5ZPwg8spV6xZx/ynw0maFbc/mMzL360e9a0yyb5RmN985vvocNDu/ZsJwsLZIjcz/hUozn015/DA3lBHswercu+flQRSTIYkuL/eJq9ocoZoIsuci/Px3fz3D5TTp6KcBsCZoLuAdBRF2fkaOeJpS9+JeZaAPEV7YU0IPa9OQkceJHl5oo47HjCUHAPuzRmnHJqFshjNN9Y3cHM+/QEefBE5aZf3c2a4KfF7ZWPuEinPVjUtN3FQKsLreoNUkaEZiRj8fweH89W9SLb6w5H12MKGpz8CiVZRzrgLwzKebX0zBFJdd3//vhHkrDux2swGTd9oDMqkuBqOFgLKhhvgnxv6N8r0mPWTqabavXoU4QPMLn7RNS6wEbmyC4CXUn2z7K8h5VpE+mDXVn20jP/UgjkCmWaeZYvsXeVnlVRGF12ifj6PdAN82a3JAXHfL3Wu4jGPzF63ojqy1UBPjZ3RJHGXx2VLP4dTa/V21SC6GtKGrqSyUOaqSRBrJJilWc0wNjLaU5lkMsKQ+fNrhbiMvo8rCOIV76wey88fcLmwG+IYKXX47aZ0b7uvLv/WGixkEC2cDWKx8WV5Zhs5RwM0sOa0pQ5Lu2iWe3gLEqriw=
         - secure: H03TQJZGscMFrbmmWI+TGiOdQkEueQ8ZLF+GEKl2zndYf+nBaSOB/PzFMFTokw6irdiiYR/ZE6pGnwUYaA/Nuz98OOXXUbTM12ev6ixd6/tQkgaSIb+P9HN0oQdpqBGNJKEBlR0mUffTlnBqJX0pejfbqAkYEziOZF+yV649fUsaKfxDy53qpHRZ2Clmvxu2ZoNlNJ1O1Ez5gN4NRFRLhjTD68BebvkEYcxUaXZDHf/QJfnsWz4UsI4E9rrKNk2ozfH9y6iRZ4P1RBRiZiLNUIvy0mC7DV01Y8YNeFEOGNWj6LH12vNzLmMRSGyYg5RN/WvxM2cGNdNvuLwJcLl5UPsBNQsVQVD7W4RiedlUEEvTvQ74LWL5Oq5oBwolIMYml6emdMX1k9A7nhDPyE2G5TzkNph/PugjsZAtp3EiTb/c4vjGGbcJDiC2MVjqqx3/q1YsAeKVZdmJE38iysFQZk/ojuSPZIBINIZ8FHQqpJQBWoiHMJ/fDTtsroK8SGufDM+OVvXwxGHK4qJs1bMWJZEYI+jKj5STZGdYn+cSfcG+aoVBxU/vaDELTkB5IEYd9LNaZ4B+pWQxerZWRd6Ob8z7m7siV6q0hQdBMnpQy/o3WoVRGGWQE+/b408ESBYDb44qXlXwhoMHsGJbZ8vG+CqBeoSDSz5RZ1FQbKoUHZk=
 
-after_success:
-    gulp deploy --user $FTP_USER --password $FTP_PASSWORD
+# after_success:
+    # gulp deploy --user $FTP_USER --password $FTP_PASSWORD

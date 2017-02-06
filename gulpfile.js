@@ -26,7 +26,8 @@ var paths = {
   js: './public/js/',
   css: './public/css/',
   data: './src/_data/',
-  sass: './src/sass/'
+  sass: './src/sass/',
+  src: './src/'
 };
 
 /**
@@ -120,6 +121,12 @@ gulp.task('watch', function () {
 
 // Build task compile sass and pug.
 gulp.task('build', ['sass', 'pug', 'js', 'sitemap']);
+
+// gulp php
+gulp.task('php', function() {
+	gulp.src(paths.src + '**/*.php')
+		.pipe(gulp.dest(paths.public));
+})
 
 /**
  * Default task, running just `gulp` will compile the sass,
