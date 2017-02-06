@@ -33,7 +33,7 @@ services:
             - ./site.conf:/etc/nginx/conf.d/default.conf
         networks:
             - code-network
-        enviroment:
+        environment:
             - "VIRTUAL_HOST=dev.kdoveton.com"
             - "LETSENCRYPT_HOST=dev.kdoveton.com"
             - "LETSENCRYPT_EMAIL=kevindoveton@me.com"
