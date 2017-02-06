@@ -25,8 +25,10 @@ var paths = {
   public: './public/',
   js: './public/js/',
   css: './public/css/',
+  images: './public/img/'
   data: './src/_data/',
   sass: './src/sass/',
+  assets: './assets/'
   src: './src/'
 };
 
@@ -126,6 +128,11 @@ gulp.task('build', ['sass', 'pug', 'js', 'sitemap']);
 gulp.task('php', function() {
 	gulp.src(paths.src + '**/*.php')
 		.pipe(gulp.dest(paths.public));
+})
+
+gulp.task('assets', function() {
+	gulp.src(paths.assets + '**/*.jpg')
+		.pipe(gulp.dest(paths.images));
 })
 
 /**
