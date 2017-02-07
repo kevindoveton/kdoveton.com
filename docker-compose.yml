@@ -29,6 +29,7 @@ services:
 
     web:
         image: nginx:latest
+        container_name: web-kdoveton.com
         expose:
             - 80
             - 443
@@ -44,6 +45,24 @@ services:
             - "HTTPS_METHOD=redirect"
             - "VIRTUAL_PORT=80"
             
+    web:
+        image: nginx:latest
+        container_name: web-rdec.com.au
+        expose:
+            - 80
+            - 443
+        volumes:
+            - ./public:/code
+            - ./site.conf:/etc/nginx/conf.d/default.conf
+        networks:
+            - code-network
+        environment:
+            - "VIRTUAL_HOST=rdec.com.au"
+            - "LETSENCRYPT_HOST=rdec.com.au"
+            - "LETSENCRYPT_EMAIL=kevindoveton@me.com"
+            - "HTTPS_METHOD=redirect"
+            - "VIRTUAL_PORT=80"
+    
     php:
         image: php:fpm
         volumes:
