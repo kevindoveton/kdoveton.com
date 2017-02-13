@@ -4,4 +4,4 @@ Family Centre is the official app for the Christian Family Centre, Seaton. You c
 
 Initially designed for iOS using Swift, redeveloped using ionic framework to support Android and iOS under a single codebase.
 
-https://itunes.apple.com/bm/app/family-centre/id979098141?mt=8
+Find it on [iTunes](https://itunes.apple.com/bm/app/family-centre/id979098141?mt=8)
