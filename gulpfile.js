@@ -36,23 +36,27 @@ var paths = {
  * Compile .pug files and pass in data from json file
  * matching file name. index.pug - index.pug.json
  */
-gulp.task('pug', function () {
+gulp.task('pug', function (cb) {
 	pump([
 		gulp.src('./src/*.pug'),
 		pug(),
 		gulp.dest(paths.public)
-	]);
+	],function(e) {
+		cb();
+	});
 	return;
 });
 
-gulp.task('js', function() {
+gulp.task('js', function(cb) {
 	// User
 	pump([
 		gulp.src('./src/js/user/*.js'),
 		concat('dist.js'),
 		// uglify(),
 		gulp.dest(paths.js)
-	]);
+	],function() {
+		
+	});
 
 	// Vendor
 	pump([
@@ -60,7 +64,9 @@ gulp.task('js', function() {
 		concat('vendor.js'),
 		uglify(),
 		gulp.dest(paths.js)
-	]);
+	], function(e) {
+		cb();
+	});
 
 	return;
 });
@@ -88,7 +94,7 @@ gulp.task('browser-sync', ['sass', 'pug', 'js'], function () {
  * Compile .scss files into public css directory With autoprefixer no
  * need for vendor prefixes then live reload the browser.
  */
-gulp.task('sass', function () {
+gulp.task('sass', function (cb) {
 	pump([
 		gulp.src(paths.sass + '*.sass'),
 		sass({
@@ -106,6 +112,7 @@ gulp.task('sass', function () {
 		if (e !== undefined) {
 			console.log(e);
 		}
+		cb();
 	});
 	return;
 });
@@ -142,7 +149,7 @@ gulp.task('assets', function() {
  */
 gulp.task('default', ['browser-sync', 'watch']);
 
-gulp.task('sitemap', function () {
+gulp.task('sitemap', function (cb) {
     gulp.src(paths.public + '/**/*.html', {
             read: false
         })
@@ -152,6 +159,7 @@ gulp.task('sitemap', function () {
 			changefreq: 'monthly'
         }))
         .pipe(gulp.dest(paths.public));
+	cb();
 });
 
 // FTP DEPLOY
