@@ -22,10 +22,10 @@ var gulp = require('gulp'),
  * Directories here
  */
 var paths = {
-  public: './public/',
-  js: './public/js/',
-  css: './public/css/',
-  images: './public/img/',
+  public: './build/',
+  js: './build/js/',
+  css: './build/css/',
+  images: './build/img/',
   data: './src/_data/',
   sass: './src/sass/',
   assets: './assets/',
