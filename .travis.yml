@@ -12,6 +12,7 @@ script:
     - gulp build
     - gulp assets
     - gulp php
+    - gulp sitemap
 
 after_success:
     - node_modules/.bin/gh-pages-travis
