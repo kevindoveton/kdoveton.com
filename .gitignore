@@ -4,3 +4,5 @@ node_modules
 *.thumb
 npm-debug.log
 public/
+deploy_key.pem
+deploy_key.pem.pub
