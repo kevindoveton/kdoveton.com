@@ -30,6 +30,24 @@
 			margin-right: 5%
 			margin-left: 5%
 			text-transform: uppercase
+			p
+				transition: color .3s ease-in-out
+		li:hover
+			p
+				color: $bg2
 
-		li.active
-			border-bottom: 3px solid $white
+	div.social
+		position: absolute
+		bottom: .5em
+		right: 0
+		height: 2em
+		svg
+			margin-right: .5em
+			display: inline-block
+			height: 100%
+			*
+				transition: fill .3s ease-in-out
+			
+		svg:hover
+			*
+				fill: $bg2
