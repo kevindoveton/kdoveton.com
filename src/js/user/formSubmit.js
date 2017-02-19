@@ -2,7 +2,7 @@ $(function() {
 	$("#submitForm").click(function(event) {
 		event.preventDefault();
 		var d = $("form").serialize();
-		$.post("/contact.php", d, function(data) {
+		$.post("/php/contact.php", d, function(data) {
 			if (data === "success") {
 				console.log('success');
 
