@@ -3,6 +3,6 @@ node_modules
 .sass-cache
 *.thumb
 npm-debug.log
-public/
+build/
 deploy_key.pem
 deploy_key.pem.pub
