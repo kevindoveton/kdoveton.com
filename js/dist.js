@@ -49,9 +49,9 @@ function detectKeyPress(e) {
 }
 
 $(function() {
-	$(".workInfo").on({
-		'click' : closeWorkModal
-	});
+	// $(".workInfo").on({
+		// 'click' : closeWorkModal
+	// });
 
 	$(document).keyup(function(e) {
 		var KEYCODE_ESC = 27;
