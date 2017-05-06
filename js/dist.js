@@ -30,8 +30,11 @@ var workModalOpen = false;
 function closeWorkModal() {
 	workModalOpen = false;
 	$($("p.close")[0]).addClass("twist");
-	$(".workInfo").css({opacity: 0,'z-index': -1});
-	setTimeout(function(){$($("p.close")[0]).removeClass("twist");}, 500);
+	$(".workInfo").css({opacity: 0});
+	setTimeout(function() {
+		$($("p.close")[0]).removeClass("twist");
+		$(".workInfo").css({'z-index': -1});
+	}, 500);
 }
 
 function openWorkModal(t) {
