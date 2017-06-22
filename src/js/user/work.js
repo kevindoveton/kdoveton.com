@@ -26,9 +26,9 @@ function detectKeyPress(e) {
 }
 
 $(function() {
-	// $(".workInfo").on({
-		// 'click' : closeWorkModal
-	// });
+	$(document.links).filter(function() {
+		return this.hostname != window.location.hostname;
+	}).attr('target', '_blank');
 
 	$(document).keyup(function(e) {
 		var KEYCODE_ESC = 27;
