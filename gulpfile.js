@@ -1,7 +1,7 @@
 /*global require*/
 "use strict";
 
-var domainName = 'http://www.kdoveton.com';
+var domainName = 'https://www.kdoveton.com';
 
 var gulp = require('gulp'),
   path = require('path'),
