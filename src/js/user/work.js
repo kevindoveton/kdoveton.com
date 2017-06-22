@@ -4,6 +4,7 @@ function closeWorkModal() {
 	workModalOpen = false;
 	$($("p.close")[0]).addClass("twist");
 	$(".workInfo").css({opacity: 0});
+	$('body').removeClass('modal-open');
 	setTimeout(function() {
 		$($("p.close")[0]).removeClass("twist");
 		$(".workInfo").css({'z-index': -1});
@@ -12,7 +13,7 @@ function closeWorkModal() {
 
 function openWorkModal(t) {
 	workModalOpen = true;
-
+	$('body').addClass('modal-open')
 	$(".workInfo").css({'z-index': 3, opacity: 1});
 
 	// get the contents of the div from a span with class 'modalContent'
