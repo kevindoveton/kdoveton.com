@@ -37,38 +37,38 @@ var paths = {
  * matching file name. index.pug - index.pug.json
  */
 gulp.task('pug', function (cb) {
-	pump([
-		gulp.src('./src/*.pug'),
-		pug(),
-		gulp.dest(paths.public)
-	],function(e) {
-		cb();
-	});
-	return;
+  pump([
+    gulp.src('./src/*.pug'),
+    pug(),
+    gulp.dest(paths.public)
+  ],function(e) {
+    cb();
+  });
+  return;
 });
 
 gulp.task('js', function(cb) {
-	// User
-	pump([
-		gulp.src('./src/js/user/*.js'),
-		concat('dist.js'),
-		uglify(),
-		gulp.dest(paths.js)
-	],function() {
-		
-	});
+  // User
+  pump([
+    gulp.src('./src/js/user/*.js'),
+    concat('dist.js'),
+    uglify(),
+    gulp.dest(paths.js)
+  ],function() {
+    
+  });
 
-	// Vendor
-	pump([
-		gulp.src('./src/js/vendor/*.js'),
-		concat('vendor.js'),
-		uglify(),
-		gulp.dest(paths.js)
-	], function(e) {
-		cb();
-	});
+  // Vendor
+  pump([
+    gulp.src('./src/js/vendor/*.js'),
+    concat('vendor.js'),
+    uglify(),
+    gulp.dest(paths.js)
+  ], function(e) {
+    cb();
+  });
 
-	return;
+  return;
 });
 
 /**
@@ -95,26 +95,26 @@ gulp.task('browser-sync', ['sass', 'pug', 'js'], function () {
  * need for vendor prefixes then live reload the browser.
  */
 gulp.task('sass', function (cb) {
-	pump([
-		gulp.src(paths.sass + '*.sass'),
-		sass({
-			includePaths: [paths.sass],
-			outputStyle: 'compressed'
-		}),
-		prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
-			cascade: true
-		}),
-		gulp.dest(paths.css),
-		browserSync.reload({
-	      stream: true
-	    })
-	], function(e) {
-		if (e !== undefined) {
-			console.log(e);
-		}
-		cb();
-	});
-	return;
+  pump([
+    gulp.src(paths.sass + '*.sass'),
+    sass({
+      includePaths: [paths.sass],
+      outputStyle: 'compressed'
+    }),
+    prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
+      cascade: true
+    }),
+    gulp.dest(paths.css),
+    browserSync.reload({
+        stream: true
+      })
+  ], function(e) {
+    if (e !== undefined) {
+      console.log(e);
+    }
+    cb();
+  });
+  return;
 });
 
 /**
@@ -133,13 +133,13 @@ gulp.task('build', ['sass', 'pug', 'js', 'sitemap']);
 
 // gulp php
 gulp.task('php', function() {
-	gulp.src(paths.src + '**/*.php')
-		.pipe(gulp.dest(paths.public));
+  gulp.src(paths.src + '**/*.php')
+    .pipe(gulp.dest(paths.public));
 })
 
 gulp.task('assets', function() {
-	gulp.src(paths.assets + '**/*.jpg')
-		.pipe(gulp.dest(paths.images));
+  gulp.src(paths.assets + '**/*.jpg')
+    .pipe(gulp.dest(paths.images));
 })
 
 /**
@@ -150,33 +150,39 @@ gulp.task('assets', function() {
 gulp.task('default', ['browser-sync', 'watch']);
 
 gulp.task('sitemap', function (cb) {
+  pump([
     gulp.src(paths.public + '/**/*.html', {
-            read: false
-        })
-        .pipe(sitemap({
-            siteUrl: domainName,
-			fileName: 'sitemap.xml',
-			changefreq: 'monthly'
-        }))
-        .pipe(gulp.dest(paths.public));
-	cb();
+      read: false
+    }),
+    sitemap({
+      siteUrl: domainName,
+      fileName: 'sitemap.xml',
+      changefreq: 'monthly',
+      getLoc(siteUrl, loc, entry) {
+        return loc.substr(0, loc.lastIndexOf('.')) || loc; // Removes the file extension
+      }
+    }),
+    gulp.dest(paths.public)
+  ], function(err) {
+    cb(null);
+  });
 });
 
 // FTP DEPLOY
-var ftp = require('vinyl-ftp');
-var gutil = require('gulp-util');
-var minimist = require('minimist');
-var args = minimist(process.argv.slice(2));
-
-gulp.task('deploy', function() {
-  var remotePath = '/kdoveton/';
-  var conn = ftp.create({
-    host: 'kdoveton.com',
-    user: args.user,
-    password: args.password,
-    log: gutil.log
-  });
-  gulp.src(['./public/**/*.*'])
-    .pipe(conn.newer(remotePath))
-    .pipe(conn.dest(remotePath));
-});
+// var ftp = require('vinyl-ftp');
+// var gutil = require('gulp-util');
+// var minimist = require('minimist');
+// var args = minimist(process.argv.slice(2));
+// 
+// gulp.task('deploy', function() {
+//   var remotePath = '/kdoveton/';
+//   var conn = ftp.create({
+//     host: 'kdoveton.com',
+//     user: args.user,
+//     password: args.password,
+//     log: gutil.log
+//   });
+//   gulp.src(['./public/**/*.*'])
+//     .pipe(conn.newer(remotePath))
+//     .pipe(conn.dest(remotePath));
+// });
