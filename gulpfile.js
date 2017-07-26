@@ -27,6 +27,7 @@ var paths = {
   css: './build/css/',
   images: './build/img/',
   data: './src/_data/',
+  pug: './src/pug/',
   sass: './src/sass/',
   assets: './assets/',
   src: './src/'
@@ -38,10 +39,11 @@ var paths = {
  */
 gulp.task('pug', function (cb) {
   pump([
-    gulp.src('./src/*.pug'),
+    gulp.src(paths.pug+'/**/*.pug'),
     pug(),
-    gulp.dest(paths.public)
+    gulp.dest('./build/')
   ],function(e) {
+    console.log(e);
     cb();
   });
   return;
