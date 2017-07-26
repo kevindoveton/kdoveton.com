@@ -43,7 +43,9 @@ gulp.task('pug', function (cb) {
     pug(),
     gulp.dest('./build/')
   ],function(e) {
-    console.log(e);
+    if(e) {
+      console.log(e);
+    }
     cb();
   });
   return;
