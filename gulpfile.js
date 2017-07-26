@@ -167,7 +167,7 @@ gulp.task('sitemap', function (cb) {
       fileName: 'sitemap.xml',
       changefreq: 'monthly',
       getLoc(siteUrl, loc, entry) {
-        return loc.substr(0, loc.lastIndexOf('.')) || loc; // Removes the file extension
+        return loc.substr(0, loc.lastIndexOf('.html')) || loc; // Removes the file extension
       }
     }),
     gulp.dest(paths.public)
