@@ -39,7 +39,11 @@ var paths = {
  */
 gulp.task('pug', function (cb) {
   pump([
-    gulp.src(paths.pug+'/**/*.pug'),
+    gulp.src([
+      paths.pug+'/**/*.pug', 
+      '!'+paths.pug+'/**/includes/**/*.pug', 
+      '!'+paths.pug+'/**/_*.pug'
+    ]),
     pug(),
     gulp.dest('./build/')
   ],function(e) {
