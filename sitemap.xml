@@ -2,22 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://www.kdoveton.com/about</loc>
-        <lastmod>2017-07-17T01:22:45.120Z</lastmod>
+        <lastmod>2017-07-26T11:08:27.476Z</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://www.kdoveton.com/contact</loc>
-        <lastmod>2017-07-17T01:22:45.260Z</lastmod>
+        <lastmod>2017-07-26T11:08:27.628Z</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://www.kdoveton</loc>
-        <lastmod>2017-07-17T01:22:45.352Z</lastmod>
+        <lastmod>2017-07-26T11:08:27.736Z</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://www.kdoveton.com/work</loc>
-        <lastmod>2017-07-17T01:22:45.352Z</lastmod>
+        <lastmod>2017-07-26T11:08:27.744Z</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.kdoveton.com/includes/head</loc>
+        <lastmod>2017-07-26T11:08:27.796Z</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.kdoveton.com/includes/links</loc>
+        <lastmod>2017-07-26T11:08:27.796Z</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.kdoveton.com/includes/logo</loc>
+        <lastmod>2017-07-26T11:08:27.796Z</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.kdoveton.com/work/_base</loc>
+        <lastmod>2017-07-26T11:08:27.800Z</lastmod>
         <changefreq>monthly</changefreq>
     </url>
 </urlset>
