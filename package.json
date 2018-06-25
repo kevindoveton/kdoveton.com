@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-	"gh-pages-travis": "^1.0.4",
+    "gh-pages-travis": "^1.0.4",
     "browser-sync": "^2.9.3",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.1",
